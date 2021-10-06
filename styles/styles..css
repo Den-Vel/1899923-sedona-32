@@ -1,0 +1,170 @@
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
+
+  font-display: swap;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  background-color: #ffffff;
+}
+/* Иконки в блоке дополнительных ссылок главного меню */
+.navigation-search {
+  background-image: url("../images/search.svg");
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.navigation-favorites {
+  background-image: url("../images/favorites.svg");
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  display: block;
+}
+/* Фоновое изображение на экране привествия главной страницы */
+.about-sedona {
+  background-image: url("../images/index-background.jpg");
+  width: 1200px;
+  height: 485px;
+  text-align: center;
+}
+/* Фоновое изображение блока фильтров на странице каталога гостиниц */
+.catalog-filters-form {
+  background-image: url("../images/catalog-background.jpg");
+  width: 1200px;
+  height: 485px;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+/* Иконки в блоке "Преимущества" на главной странице */
+.housing-icon {
+  background-image: url("../images/housing-icon.svg");
+  width: 75px;
+  height: 72px;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+.burger-icon {
+  background-image: url("../images/burger-icon.svg");
+  width: 74px;
+  height: 70px;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+.souvenir-icon {
+  background-image: url("../images/souvenir-icon.svg");
+  width: 64px;
+  height: 76px;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+/* Иконки в блоке сортировки страницы каталога */
+.listing-button-tiles {
+  background-image: url("../images/mode-tile.svg");
+  width: 16px;
+  height: 14px;
+  text-align: center;
+  background-repeat: no-repeat;
+  display: block; 
+}
+
+.listing-button-slides {
+  background-image: url("../images/mode-slideshow.svg");
+  width: 16px;
+  height: 14px;
+  text-align: center;
+  background-repeat: no-repeat;
+  display: block; 
+}
+
+.listing-button-list {
+  background-image: url("../images/mode-list.svg");
+  width: 16px;
+  height: 14px;
+  text-align: center;
+  background-repeat: no-repeat;
+  display: block; 
+}
+
+/* Фоновое изображение блока "Подпишитесь на рассылку" главной страницы */
+.subscribe {
+  background-image: url("../images/background.png");
+  width: 1200px;
+  height: 411px;
+  text-align: center;
+}
+/* Иконки в блоке ссылок на страницы соц. сетей */
+.twitter-button {
+  background-image: url("../images/social-twitter.svg");
+  width: 18px;
+  height: 15px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.facebook-button {
+  background-image: url("../images/social-facebook.svg");
+  width: 18px;
+  height: 15px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.youtube-button {
+  background-image: url("../images/social-youtube.svg");
+  width: 18px;
+  height: 15px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

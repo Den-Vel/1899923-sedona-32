@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
+    <link rel="stylesheet" href="styles/styles..css">
   </head>
   <body>
     <header>
@@ -20,23 +21,23 @@
         </ul>
         <div class="header-logo">
           <a href="https://htmlacademy.ru">
-            <img class="logo" src="" alt="Логотип сайта бронирования гостиниц в Седоне.">
+            <img class="logo" src="images/logo-sedona.svg" width="138" height="70" alt="Логотип сайта бронирования гостиниц в Седоне.">
           </a>
         </div>
         <ul class="navigation-list navigation-user">
           <li class=navigation-item>
-            <a class="navigation-link" href="#">
+            <a class="navigation-search" href="#">
               <span class="visually-hidden">Поиск.</span>
             </a>
           </li>
           <li class=navigation-item>
-            <a class="navigation-link" href="#">
+            <a class="navigation-favorites" href="#">
               <span class="visually-hidden">Избранное.</span>
             </a>
           </li>
           <li class=navigation-item>
-            <a class="navigation-link" href="hotels.html">
-              <span class="visually-hidden">Перейти на страницу каталога гостиниц в Седоне.</span>
+            <a class="navigation-hotels">
+              <span class="visually-hidden">Перейти на страницу каталога гостиниц в Седоне.</span>Хочу сюда!
             </a>
           </li>
         </ul>
@@ -116,9 +117,9 @@
           <div class="listing-mode">
             <a href="#" class="listing-button listing-button-tiles">
               <span class="visually-hidden">Показать карточки</span>
-            <a href="#" class="listing-button listing-button-full">
-              <span class="visually-hidden">Показать полностью</span>
-            </a><a href="#" class="listing-button listing-button-full">
+            <a href="#" class="listing-button listing-button-slides">
+              <span class="visually-hidden">Показать слайды</span>
+            </a><a href="#" class="listing-button listing-button-list">
               <span class="visually-hidden">Показать список</span>
             </a>
           </div>
@@ -127,7 +128,7 @@
         <div class="listing">
           <div class="listing-card">
             <a class="listing-card-link" href="#">
-              <img class="listing-card-image" src="" alt="Гостиница Amara Resort & Spa">
+              <img class="listing-card-image" src="images/hotels/amara-resort.jpg" width="180" height="120" alt="Гостиница Amara Resort & Spa">
               <h3 class="listing-card-title">Amara Resort & Spa</h3>
             </a>
             <span>Гостиница</span>
@@ -135,7 +136,7 @@
             <a class="button listing-card-button" href="#">Подробнее</a>
             <button class="listing-card-button favorites" type="submit">В избранное</button>
             <div class="listing-card-stars">
-              <img class="stars-image" src="" alt="Количество звезд">
+              <img class="stars-image" src=""alt="Количество звезд">
             </div>
             <span class="listing-card-rating">Рейнтиг: 8,5</span>
           </div>
@@ -144,7 +145,7 @@
         <div class="listing">
           <div class="listing-card">
             <a class="listing-card-link" href="#">
-              <img class="listing-card-image" src="" alt="Мотель Desert Quail Inn">
+              <img class="listing-card-image" src="images/hotels/desert-quail-inn.jpg" width="180" height="120" alt="Мотель Desert Quail Inn">
               <h3 class="listing-card-title">Desert Quail Inn</h3>
             </a>
             <span>Мотель</span>
@@ -161,7 +162,7 @@
         <div class="listing">
           <div class="listing-card">
             <a class="listing-card-link" href="#">
-              <img class="listing-card-image" src="" alt="Апартаменты Villas at Poco Diablo">
+              <img class="listing-card-image" src="images/hotels/villas-poco-diablo.jpg" width="180" height="120" alt="Апартаменты Villas at Poco Diablo">
               <h3 class="listing-card-title">Villas at Poco Diablo</h3>
             </a>
             <span>Апартаменты</span>
@@ -178,7 +179,7 @@
         <div class="listing">
           <div class="listing-card">
             <a class="listing-card-link" href="#">
-              <img class="listing-card-image" src="" alt="Гостиница GreenTree Inn">
+              <img class="listing-card-image" src="images/hotels/green-tree.jpg" width="180" height="120" alt="Гостиница GreenTree Inn">
               <h3 class="listing-card-title">GreenTree Inn</h3>
             </a>
             <span>Гостиница</span>
@@ -230,7 +231,7 @@
         </form>
       </section>
 
-      <section class="subscribe">
+      <section class="catalog-subscribe">
         <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
         <p>
           Только полезная информация и никакого спама, честное бойскаутское!
@@ -251,17 +252,17 @@
         <h2 class="visually-hidden">Социальные сети.</h2>
         <ul class="footer-social-list">
           <li class="footer-social-item">
-            <a class="social-button" href="https://twitter.com/htmlacademy_ru">
+            <a class="twitter-button" href="https://twitter.com/htmlacademy_ru">
               <span class="visually-hidden">Перейти в Твиттер.</span>
             </a>
           </li>
           <li class="footer-social-item">
-            <a class="social-button" href="https://www.facebook.com/htmlacademy">
+            <a class="facebook-button" href="https://www.facebook.com/htmlacademy">
               <span class="visually-hidden">Перейти в Фейсбук.</span>
             </a>
           </li>
           <li class="footer-social-item">
-            <a class="social-button" href="https://www.youtube.com/user/htmlacademyru">
+            <a class="youtube-button" href="https://www.youtube.com/user/htmlacademyru">
               <span class="visually-hidden">Перейти в Ютьюб.</span>
             </a>
           </li>
@@ -275,7 +276,7 @@
 
       <div class="footer-made-in-logo">
         <a href="https://htmlacademy.ru">
-          <img src="" alt="Логотип Сделано в hmtlacademy.">
+          <img src="images/logo_htmlacademy.svg" width="115" height="34" alt="Логотип Сделано в hmtlacademy">
         </a>  
       </div>
     </footer>
