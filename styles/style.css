@@ -35,11 +35,41 @@
 }
 
 body {
+  margin: 0;
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
+  font-size: 18px;
+  color: #000000;
   background-color: #ffffff;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Header */
+.navigation-link {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 700;
+}
+
+.navigation-hotels,
+.apply-button {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 /* Иконки в блоке дополнительных ссылок главного меню */
 .navigation-search {
   background-image: url("../images/search.svg");
@@ -56,20 +86,183 @@ body {
   background-repeat: no-repeat;
   display: block;
 }
+
+/* End of Header */
+
+/* Main */
+/* Main/Стилизация текста */
+
+.block-title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.block-descrition {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.inner-title {
+  font-size: 60px;
+  line-height: 78px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.about-sedona-reasons {
+  font-size: 22px;
+  line-height: 36px;
+  font-weight: 400;
+}
+
+.advantages-title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.advantages-description {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+.button-hotels {
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.button-subscribe,
+.catalog-filters-title,
+.download-more-button {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.breadcrumps-link,
+.listing-card-rating {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+.filters-reset-button,
+.catalog-filters-group label,
+.listing-card span {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.filters-reset-button {
+  outline: none; 
+  border: 0;
+  background-color: transparent;
+}
+
+/* Блок сортировки на странице каталога */
+.sorting-found-hotels {
+  font-size: 30px;
+  line-height: 39px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sorting-select-control,
+.number-of-items,
+option {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #333333;
+}
+/* Блоки с карточками гостиниц */
+.listing-card-title {
+  font-size: 24px;
+  line-height: 31px;
+  font-weight: 700;
+}
+
+.listing-card-button {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.listing-card-rating {
+  text-transform: uppercase;
+}
+
+/* Пагинация на странице каталога */
+
+.pagination-item {
+  background-color: #83B3D3;
+}
+
+.pagination-link {
+  color: #ffffff;
+}
+
+.pagination-current {
+  color: #000000;
+  background-color: #E5E5E5;
+}
+/* Текст белым цветом */
+.white {
+  color: #ffffff;
+}
+/* Фоны для белого текста */
+.bg-blue {
+  background-color: #83B3D3;
+}
+
+.bg-brown {
+  background-color: #756257;
+}
+
+.bg-green {
+  background-color: #7DB54F;
+}
+
+/* Main/Графика */
 /* Фоновое изображение на экране привествия главной страницы */
-.about-sedona {
+.about-sedona-greeting {
   background-image: url("../images/index-background.jpg");
   width: 1200px;
   height: 485px;
   text-align: center;
 }
 /* Фоновое изображение блока фильтров на странице каталога гостиниц */
-.catalog-filters-form {
+.catalog-bg-image {
   background-image: url("../images/catalog-background.jpg");
   width: 1200px;
   height: 485px;
-  text-align: center;
   background-repeat: no-repeat;
+}
+/* Иконка-ссылка на главную в хлебных крошках */
+.breadcrumps-link-main {
+  background-image: url(../images/home.svg);
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.nav-link {
+  background-image: url(../images/nav-link.svg);
+  width: 5px;
+  height: 8px;
+  background-repeat: no-repeat;
+  display: block;
 }
 /* Иконки в блоке "Преимущества" на главной странице */
 .housing-icon {
@@ -131,6 +324,17 @@ body {
   height: 411px;
   text-align: center;
 }
+
+/* End of Main */
+
+/* Footer */
+
+.footer-contacts {
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 400;
+}
+
 /* Иконки в блоке ссылок на страницы соц. сетей */
 .twitter-button {
   background-image: url("../images/social-twitter.svg");
