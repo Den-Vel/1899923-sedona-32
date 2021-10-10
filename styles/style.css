@@ -34,14 +34,27 @@
   font-display: swap;
 }
 
+html {
+  min-height: 100%;
+  background-color: #E5E5E5;
+}
+
 body {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0 auto;
+  width: 1200px;
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   color: #000000;
   background-color: #ffffff;
+}
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
 }
 
 ul {
@@ -86,12 +99,46 @@ a {
   background-repeat: no-repeat;
   display: block;
 }
+/* Header/Сетка */
 
+.navigation {
+  display: flex;
+  padding-left: 71px;
+  
+}
+.navigation-list {
+  display: flex;
+}
+
+.navigation-list:nth-child(1) {
+  align-items: center;
+  justify-content: space-between;
+  width: 310px;
+  margin-right: 150px;
+}
+
+.header-logo {
+  width: 138px;
+  height: 70px;
+  margin-right: 209px;
+}
+
+.navigation-list.navigation-user {
+  align-items: center;
+  justify-content: space-between;
+  width: 160px;
+  margin-right: 72px;
+}
 /* End of Header */
 
 /* Main */
-/* Main/Стилизация текста */
 
+/* Sticky-footer */
+.main-container {
+  flex-grow: 1;
+}
+
+/* Main/Стилизация текста */
 .block-title {
   font-size: 30px;
   line-height: 36px;
@@ -233,6 +280,15 @@ option {
   background-color: #7DB54F;
 }
 
+/* Фоны в блоке "Преимущества" */
+.bg-cold-light12 {
+  background-color: rgba(131, 179, 211, 0.12);
+}
+
+.bg-cold-light20 {
+  background-color: rgba(131, 179, 211, 0.2);
+}
+
 /* Main/Графика */
 /* Фоновое изображение на экране привествия главной страницы */
 .about-sedona-greeting {
@@ -240,6 +296,7 @@ option {
   width: 1200px;
   height: 485px;
   text-align: center;
+  background-repeat: no-repeat;
 }
 /* Фоновое изображение блока фильтров на странице каталога гостиниц */
 .catalog-bg-image {
@@ -325,6 +382,85 @@ option {
   text-align: center;
 }
 
+/* Main/Сетка */
+
+/* Main/Сетка/Блок привествия */
+.about-sedona-greeting {
+  margin: 0 auto;
+  padding-top: 51px;
+  height: 485px;
+  box-sizing: border-box;
+}
+
+.sedona-description {
+  margin: 0 auto;
+  padding-top: 63px;
+  width: 720px;
+  height: 282px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.sedona-description .block-title {
+  height: 80px;
+  margin-bottom: 23px;
+}
+
+.sedona-description .reasons {
+  margin-bottom: 79px;
+}
+/* Main/Сетка/Блок "Преимущества" */
+.advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages-item {
+  display: flex;
+  width: 400px;
+  height: 384px;
+  align-items: center;
+}
+
+.advantages-item.bg-blue {
+  width: 1200px;
+}
+
+/* Main/Сетка/Блок поиска гостиниц */
+.hotel-search {
+  height: 417px;
+  padding-top: 91px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hotel-search .block-title {
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.hotel-search .block-descrition {
+  height: 37px;
+  margin-bottom: 73px;
+}
+
+/* Main/Сетка/Блок "Подпишитесь на рассылку" */
+.subscribe {
+  height: 411px;
+  padding-top: 94px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.subscribe .block-title {
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.subscribe .block-descrition {
+  height: 72px;
+  margin-bottom: 26px;
+}
 /* End of Main */
 
 /* Footer */
@@ -346,18 +482,38 @@ option {
 
 .facebook-button {
   background-image: url("../images/social-facebook.svg");
-  width: 18px;
-  height: 15px;
+  width: 10px;
+  height: 18px;
   background-repeat: no-repeat;
   display: block;
 }
 
 .youtube-button {
   background-image: url("../images/social-youtube.svg");
-  width: 18px;
-  height: 15px;
+  width: 20px;
+  height: 16px;
   background-repeat: no-repeat;
   display: block;
+}
+
+/* Footer/Сетка */
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  padding-left: 72px;
+}
+
+.footer-social-list {
+  display: flex;
+  width: 108px;
+  justify-content: space-between;
+}
+
+.footer-made-in-logo {
+  margin-right: 72px;
 }
 
 .visually-hidden {
