@@ -42,9 +42,12 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  
+  max-width: 1200px;
   min-height: 100%;
   margin: 0 auto;
-  width: 1200px;
+
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -52,6 +55,7 @@ body {
   color: #000000;
   background-color: #ffffff;
 }
+
 h1, h2, h3, p {
   margin: 0;
   padding: 0;
