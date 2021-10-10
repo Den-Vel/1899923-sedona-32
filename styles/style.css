@@ -150,7 +150,7 @@ a {
   text-transform: uppercase;
 }
 
-.block-descrition {
+.block-description {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
@@ -306,8 +306,12 @@ option {
 .catalog-bg-image {
   background-image: url("../images/catalog-background.jpg");
   width: 1200px;
-  height: 485px;
+  height: 408px;
+  padding-top: 35px;
+  padding-left: 71px;
+  margin-bottom: 45px;
   background-repeat: no-repeat;
+  box-sizing: border-box;
 }
 /* Иконка-ссылка на главную в хлебных крошках */
 .breadcrumps-link-main {
@@ -353,29 +357,17 @@ option {
 /* Иконки в блоке сортировки страницы каталога */
 .listing-button-tiles {
   background-image: url("../images/mode-tile.svg");
-  width: 16px;
-  height: 14px;
-  text-align: center;
   background-repeat: no-repeat;
-  display: block; 
 }
 
 .listing-button-slides {
   background-image: url("../images/mode-slideshow.svg");
-  width: 16px;
-  height: 14px;
-  text-align: center;
   background-repeat: no-repeat;
-  display: block; 
 }
 
 .listing-button-list {
   background-image: url("../images/mode-list.svg");
-  width: 16px;
-  height: 14px;
-  text-align: center;
   background-repeat: no-repeat;
-  display: block; 
 }
 
 /* Фоновое изображение блока "Подпишитесь на рассылку" главной страницы */
@@ -388,7 +380,7 @@ option {
 
 /* Main/Сетка */
 
-/* Main/Сетка/Блок привествия */
+/* Main/Сетка/Главная/Блок привествия */
 .about-sedona-greeting {
   margin: 0 auto;
   padding-top: 51px;
@@ -413,7 +405,7 @@ option {
 .sedona-description .reasons {
   margin-bottom: 79px;
 }
-/* Main/Сетка/Блок "Преимущества" */
+/* Main/Сетка/Главная/Блок "Преимущества" */
 .advantages-list {
   display: flex;
   flex-wrap: wrap;
@@ -430,7 +422,7 @@ option {
   width: 1200px;
 }
 
-/* Main/Сетка/Блок поиска гостиниц */
+/* Main/Сетка/Главная/Блок поиска гостиниц */
 .hotel-search {
   height: 417px;
   padding-top: 91px;
@@ -443,12 +435,12 @@ option {
   margin-bottom: 15px;
 }
 
-.hotel-search .block-descrition {
+.hotel-search .block-description {
   height: 37px;
   margin-bottom: 73px;
 }
 
-/* Main/Сетка/Блок "Подпишитесь на рассылку" */
+/* Main/Сетка/Главная/Блок "Подпишитесь на рассылку" */
 .subscribe {
   height: 411px;
   padding-top: 94px;
@@ -456,15 +448,129 @@ option {
   box-sizing: border-box;
 }
 
-.subscribe .block-title {
+.subscribe .block-title,
+.catalog-subscribe .block-title {
+  
   height: 50px;
   margin-bottom: 15px;
 }
 
-.subscribe .block-descrition {
+.subscribe .block-description,
+.catalog-subscribe .block-description {
   height: 72px;
   margin-bottom: 26px;
 }
+
+/* Main/Сетка/Каталог/Header */
+.inner-title {
+  width: 528px;
+  height: 68px;
+}
+
+.breadcrumps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 111px;
+  margin-bottom: 45px;
+}
+
+/* Main/Сетка/Каталог/Блок фильтров */
+.catalog-filters-form {
+  display: flex;
+}
+
+/* Main/Сетка/Каталог/Секция блока сортировки, листинга гостиниц, и блока пагинцаии*/
+.listing-page {
+  padding: 0 71px;
+}
+
+/* Main/Сетка/Каталог/Блок сортировки */
+.sorting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 42px;
+}
+
+.listing-mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+}
+
+.listing-button {
+  width: 48px;
+  height: 48px;
+  margin-left: 8px;
+  background-position: center;
+  border: 2px solid #E6E6E6; 
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Main/Сетка/Каталог/Блок карточек гостиниц и кнопка "Загрузить еще" */
+.listing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 31px;
+}
+
+.listing-card {
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.download-more-wrap {
+  height: 115px;
+  padding-top: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.download-more-button {
+  width: 625px;
+  height: 55px;
+}
+
+/* Main/Сетка/Каталог/Блок пагинации */
+.pagination-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+}
+.pagination {
+  display: flex;
+  width: 375px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-item,
+.pagination-current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+}
+
+/* Main/Сетка/Каталог/Блок "Подпишитесь на рассылку" */
+.catalog-subscribe-wrap {
+  padding-left: 200px;
+  padding-top: 89px;
+  margin-bottom: 137px;
+  box-sizing: border-box;
+}
+.catalog-subscribe {
+  width: 800px;
+  height: 224px;
+  text-align: center;
+}
+
+
 /* End of Main */
 
 /* Footer */
