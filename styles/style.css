@@ -64,7 +64,7 @@ h1, h2, h3, p {
 ul {
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style-type: none;
 }
 
 a {
@@ -77,6 +77,7 @@ a {
   font-size: 20px;
   line-height: 25px;
   font-weight: 700;
+  padding: 20px 5px;
 }
 
 .navigation-hotels,
@@ -87,13 +88,22 @@ a {
   text-transform: uppercase;
 }
 
+.apply-button {
+  width: 160px;
+  height: 48px;
+  border-radius: 4px;
+  border: 0;
+}
+
 /* Иконки в блоке дополнительных ссылок главного меню */
 .navigation-search {
   background-image: url("../images/search.svg");
   width: 18px;
   height: 18px;
   background-repeat: no-repeat;
+  background-position: center;
   display: block;
+  padding: 20px 10px;
 }
 
 .navigation-favorites {
@@ -101,20 +111,33 @@ a {
   width: 18px;
   height: 18px;
   background-repeat: no-repeat;
+  background-position: center;
   display: block;
+  padding: 20px 10px;
+  margin-right: 10px;
 }
 /* Header/Сетка */
 
 .navigation {
   display: flex;
   padding-left: 71px;
-  
+  margin: 0;
 }
 .navigation-list {
   display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
-
-.navigation-list:nth-child(1) {
+/*
+.navigation-link,
+.navigation-search,
+.navigation-hotels,
+.navigation-favorites {
+  outline: 2px solid blue;
+}
+*/
+.navigation-list:first-child {
   align-items: center;
   justify-content: space-between;
   width: 310px;
@@ -130,8 +153,12 @@ a {
 .navigation-list.navigation-user {
   align-items: center;
   justify-content: space-between;
-  width: 160px;
   margin-right: 72px;
+}
+
+.navigation-hotels {
+  padding: 10px 35px;
+  border-radius: 4px;
 }
 /* End of Header */
 
@@ -214,6 +241,8 @@ a {
 }
 
 .filters-reset-button {
+  width: 160px;
+  height: 24px;
   outline: none; 
   border: 0;
   background-color: transparent;
@@ -243,10 +272,25 @@ option {
 }
 
 .listing-card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 37px;
+  
   font-size: 16px;
   line-height: 21px;
   font-weight: 700;
   text-transform: uppercase;
+  border-radius: 4px;
+  outline: none;
+  border: 0;
+}
+a.listing-card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 151px;
 }
 
 .listing-card-rating {
@@ -257,9 +301,16 @@ option {
 
 .pagination-item {
   background-color: #83B3D3;
+  border-radius: 4px;
 }
 
-.pagination-link {
+.pagination-link,
+.pagination-current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
   color: #ffffff;
 }
 
@@ -322,12 +373,21 @@ option {
   display: block;
 }
 
+.breadcrumps-nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12px;
+  height: 12px;
+}
+
 .nav-link {
   background-image: url(../images/nav-link.svg);
+  background-position: center;
+  opacity: 0.5;
   width: 5px;
   height: 8px;
   background-repeat: no-repeat;
-  display: block;
 }
 /* Иконки в блоке "Преимущества" на главной странице */
 .housing-icon {
@@ -336,6 +396,7 @@ option {
   height: 72px;
   text-align: center;
   background-repeat: no-repeat;
+  margin-top: 89px;
 }
 
 .burger-icon {
@@ -344,6 +405,7 @@ option {
   height: 70px;
   text-align: center;
   background-repeat: no-repeat;
+  margin-top: 89px;
 }
 
 .souvenir-icon {
@@ -352,6 +414,7 @@ option {
   height: 76px;
   text-align: center;
   background-repeat: no-repeat;
+  margin-top: 89px;
 }
 
 /* Иконки в блоке сортировки страницы каталога */
@@ -413,13 +476,36 @@ option {
 
 .advantages-item {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 400px;
   height: 384px;
-  align-items: center;
 }
 
-.advantages-item.bg-blue {
-  width: 1200px;
+.advantages-image {
+  max-height: 384px;
+}
+
+.advantages-title:not(.advantages-icons) {
+  text-align: center;
+  margin-top: 98px;
+  margin-bottom: 25px;
+}
+
+.housing-icon,
+.burger-icon,
+.souvenir-icon {
+  margin-bottom: 23px;
+}
+
+.advantages-icons {
+  margin-bottom: 20px;
+}
+
+.advantages-description {
+  width: 250px;
+  text-align: center;
+  margin-bottom: 26px;
 }
 
 /* Main/Сетка/Главная/Блок поиска гостиниц */
@@ -444,13 +530,13 @@ option {
 .subscribe {
   height: 411px;
   padding-top: 94px;
+  margin-bottom: 40px;
   text-align: center;
   box-sizing: border-box;
 }
 
 .subscribe .block-title,
 .catalog-subscribe .block-title {
-  
   height: 50px;
   margin-bottom: 15px;
 }
@@ -517,14 +603,63 @@ option {
   justify-content: center;
   margin-bottom: 31px;
 }
-
+/* Сетка карточки гостиниц */
 .listing-card {
+  display: grid;
+  grid-template-columns: 180px 178px auto 160px;
+  grid-template-rows: 30px 53px 37px;
+  column-gap: 8px;
+  grid-template-areas: 
+    "listing-card-image listing-card-title listing-card-title listing-card-stars"
+    "listing-card-image listing-hotel listing-hotel-price listing-card-stars"
+    "listing-card-image grid-details grid-favorites listing-card-rating";
+  margin-bottom: 30px;
+  padding-bottom: 30px;
   border-bottom: 1px solid #E6E6E6;
 }
+.listing-card-image {
+  grid-area: listing-card-image;
+}
+.listing-card-title {
+  grid-area: listing-card-title;
+  padding-left: 27px;
+}
+.listing-card-stars {
+  grid-area: listing-card-stars;
+  
+}
+.listing-hotel {
+  grid-area: listing-hotel;
+  padding-left: 27px;
+}
+.listing-hotel-price {
+  grid-area: listing-hotel-price;
+}
+.grid-details {
+  grid-area: grid-details;
+  margin-left: 27px;
+  display: block;
+  box-sizing: border-box;
+}
+.grid-favorites {
+  grid-area: grid-favorites;
+  justify-self: start;
+}
+.listing-card-rating {
+  grid-area: listing-card-rating;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 37px;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+}
+/* Конец сетки карточки гостиниц */
 
 .download-more-wrap {
-  height: 115px;
-  padding-top: 30px;
+  height: 85px;
   text-align: center;
   box-sizing: border-box;
   border-bottom: 1px solid #E6E6E6;
@@ -533,6 +668,8 @@ option {
 .download-more-button {
   width: 625px;
   height: 55px;
+  border-radius: 4px;
+  border: 0;
 }
 
 /* Main/Сетка/Каталог/Блок пагинации */
@@ -548,14 +685,6 @@ option {
   align-items: center;
 }
 
-.pagination-item,
-.pagination-current {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 55px;
-}
 
 /* Main/Сетка/Каталог/Блок "Подпишитесь на рассылку" */
 .catalog-subscribe-wrap {
@@ -577,33 +706,41 @@ option {
 
 .footer-contacts {
   font-size: 40px;
-  line-height: 46px;
+  line-height: 40px;
   font-weight: 400;
+  width: 720px;
+  text-align: center;
+  padding-bottom: 30px;
 }
 
 /* Иконки в блоке ссылок на страницы соц. сетей */
+
+.social-button {
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 8px;
+}
+
 .twitter-button {
   background-image: url("../images/social-twitter.svg");
   width: 18px;
   height: 15px;
-  background-repeat: no-repeat;
-  display: block;
 }
 
 .facebook-button {
   background-image: url("../images/social-facebook.svg");
   width: 10px;
   height: 18px;
-  background-repeat: no-repeat;
-  display: block;
 }
 
 .youtube-button {
   background-image: url("../images/social-youtube.svg");
   width: 20px;
   height: 16px;
-  background-repeat: no-repeat;
-  display: block;
+  margin-right: 0;
 }
 
 /* Footer/Сетка */
@@ -611,15 +748,15 @@ option {
 .page-footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 120px;
+  align-items: flex-start;
   padding-left: 72px;
 }
 
 .footer-social-list {
   display: flex;
-  width: 108px;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 128px;
+  justify-content: center;
 }
 
 .footer-made-in-logo {
