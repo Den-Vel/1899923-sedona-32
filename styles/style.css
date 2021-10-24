@@ -54,6 +54,8 @@ body {
   font-size: 18px;
   color: #000000;
   background-color: #ffffff;
+
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
 h1, h2, h3, p {
@@ -73,17 +75,50 @@ a {
 }
 
 /* Header */
+.navigation-item.favorites-icon {
+  position: absolute;
+  top: 14px;
+  left: 57px;
+  width: 19px;
+  height: 19px;
+}
+
+.nav-favorites-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 19px;
+  height: 19px;
+
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 400;
+
+  background-color: #7DB54F;
+  border-radius: 50%;
+}
+
 .navigation-link {
+  display: block;
   font-size: 20px;
   line-height: 25px;
   font-weight: 700;
-  padding: 20px 5px;
+
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.navigation-item.nav-link-current {
+  border-bottom: 2px solid #756257;
+  margin-bottom: 1px;
 }
 
 .navigation-hotels,
 .apply-button {
   font-size: 16px;
-  line-height: 20px;
+  line-height: 21px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -93,35 +128,39 @@ a {
   height: 48px;
   border-radius: 4px;
   border: 0;
+  margin-bottom: 20px;
 }
 
 /* Иконки в блоке дополнительных ссылок главного меню */
 .navigation-search {
+  display: block;
   background-image: url("../images/search.svg");
   width: 18px;
   height: 18px;
   background-repeat: no-repeat;
   background-position: center;
-  display: block;
-  padding: 20px 10px;
+  padding: 7px;
+  margin-right: 7px;
 }
 
 .navigation-favorites {
+  display: block;
   background-image: url("../images/favorites.svg");
   width: 18px;
   height: 18px;
   background-repeat: no-repeat;
   background-position: center;
-  display: block;
-  padding: 20px 10px;
-  margin-right: 10px;
+  padding: 7px;
+  margin-right: 26px;
 }
 /* Header/Сетка */
 
 .navigation {
   display: flex;
-  padding-left: 71px;
+  justify-content: space-between;
+  padding: 0 71px;
   margin: 0;
+  position: relative;
 }
 .navigation-list {
   display: flex;
@@ -129,35 +168,31 @@ a {
   margin: 0;
   padding: 0;
 }
-/*
-.navigation-link,
-.navigation-search,
-.navigation-hotels,
-.navigation-favorites {
-  outline: 2px solid blue;
-}
-*/
+
 .navigation-list:first-child {
   align-items: center;
-  justify-content: space-between;
-  width: 310px;
-  margin-right: 150px;
+  justify-content: flex-start;
+  width: 409px;
+  gap: 33px;
 }
 
 .header-logo {
+  position: absolute;
+  left: 531px;
   width: 138px;
   height: 70px;
-  margin-right: 209px;
 }
 
 .navigation-list.navigation-user {
   align-items: center;
   justify-content: space-between;
-  margin-right: 72px;
+
+  position: relative;
 }
 
 .navigation-hotels {
-  padding: 10px 35px;
+  padding: 8px 35px;
+  margin-bottom: 17px;
   border-radius: 4px;
 }
 /* End of Header */
@@ -214,10 +249,11 @@ a {
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
+  border-radius: 10px;
+  padding: 18px 150px; 
 }
 
 .button-subscribe,
-.catalog-filters-title,
 .download-more-button {
   font-size: 20px;
   line-height: 26px;
@@ -225,6 +261,11 @@ a {
   text-transform: uppercase;
 }
 
+.catalog-filters-title {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+}
 .breadcrumps-link,
 .listing-card-rating {
   font-size: 16px;
@@ -250,6 +291,7 @@ a {
 
 /* Блок сортировки на странице каталога */
 .sorting-found-hotels {
+  width: 529px;
   font-size: 30px;
   line-height: 39px;
   font-weight: 700;
@@ -302,6 +344,7 @@ a.listing-card-button {
 .pagination-item {
   background-color: #83B3D3;
   border-radius: 4px;
+  margin-right: 7px;
 }
 
 .pagination-link,
@@ -317,6 +360,7 @@ a.listing-card-button {
 .pagination-current {
   color: #000000;
   background-color: #E5E5E5;
+  margin-right: 7px;
 }
 /* Текст белым цветом */
 .white {
@@ -347,12 +391,24 @@ a.listing-card-button {
 /* Main/Графика */
 /* Фоновое изображение на экране привествия главной страницы */
 .about-sedona-greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   background-image: url("../images/index-background.jpg");
   width: 1200px;
-  height: 485px;
-  text-align: center;
+  height: 428px;
+  padding-top: 51px;
   background-repeat: no-repeat;
 }
+
+.divider {
+  background-image: url("../images/divider.svg");
+  width: 1200px;
+  height: 57px;
+}
+
 /* Фоновое изображение блока фильтров на странице каталога гостиниц */
 .catalog-bg-image {
   background-image: url("../images/catalog-background.jpg");
@@ -360,6 +416,7 @@ a.listing-card-button {
   height: 408px;
   padding-top: 35px;
   padding-left: 71px;
+  padding-right: 71px;
   margin-bottom: 45px;
   background-repeat: no-repeat;
   box-sizing: border-box;
@@ -444,12 +501,6 @@ a.listing-card-button {
 /* Main/Сетка */
 
 /* Main/Сетка/Главная/Блок привествия */
-.about-sedona-greeting {
-  margin: 0 auto;
-  padding-top: 51px;
-  height: 485px;
-  box-sizing: border-box;
-}
 
 .sedona-description {
   margin: 0 auto;
@@ -564,6 +615,73 @@ a.listing-card-button {
 /* Main/Сетка/Каталог/Блок фильтров */
 .catalog-filters-form {
   display: flex;
+  justify-content: space-evenly;
+}
+
+.catalog-filters-group {
+  display: grid;
+  grid-template-columns: 20px min-content;
+  align-items: baseline;
+  row-gap: 16px;
+  column-gap: 19px;
+  
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.catalog-filters-group:first-child {
+  margin-right: 67px;
+}
+.catalog-filters-group:nth-child(2) {
+  margin-right: 167px;
+}
+.catalog-filters-group:nth-child(3) {
+  grid-template-columns: 144px 144px;
+  gap: 0;
+  margin-right: 81px;
+}
+.catalog-filters-title {
+  margin-bottom: 30px;
+  border: 0;
+}
+
+input[type=number] {
+  width: 80px;
+  height: 45px;
+
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
+
+  background-color: transparent;
+  border-style: none;
+  padding: 0;
+}
+
+
+.catalog-numbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 19px;
+  padding-right: 14px;
+  border: 2px solid #FFFFFF;
+  border-radius: 4px 0 0 4px;
+}
+
+.catalog-numbers label {
+  opacity: 0.3;
+}
+
+.catalog-numbers:last-of-type {
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+}
+
+.catalog-buttons {
+  padding-top: 55px;
 }
 
 /* Main/Сетка/Каталог/Секция блока сортировки, листинга гостиниц, и блока пагинцаии*/
@@ -574,9 +692,20 @@ a.listing-card-button {
 /* Main/Сетка/Каталог/Блок сортировки */
 .sorting {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 42px;
+}
+
+.sorting-select-control {
+  width: 287px;
+  height: 47px;
+  padding-left: 19px;
+  margin-right: 81px;
+
+  border: 2px solid #E6E6E6;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .listing-mode {
@@ -656,6 +785,15 @@ a.listing-card-button {
   background-color: #F2F2F2;
   border-radius: 4px;
 }
+
+.listing-card-stars {
+  text-align: center;
+}
+
+.stars-image {
+  vertical-align: middle;
+}
+
 /* Конец сетки карточки гостиниц */
 
 .download-more-wrap {
@@ -672,21 +810,47 @@ a.listing-card-button {
   border: 0;
 }
 
+label.listing-items-amount {
+  margin-right: 51px;
+  line-height: 23px;
+}
+
+#listing-items-amount {
+  width: 160px;
+  height: 48px;
+  padding-left: 17px;
+
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+
+  border: 2px solid #E6E6E6;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
 /* Main/Сетка/Каталог/Блок пагинации */
 .pagination-wrap {
   display: flex;
   justify-content: space-between;
-  height: 55px;
+  height: 56px;
 }
 .pagination {
   display: flex;
-  width: 375px;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
+  width: 623px;
 }
 
-
 /* Main/Сетка/Каталог/Блок "Подпишитесь на рассылку" */
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+}
 .catalog-subscribe-wrap {
   padding-left: 200px;
   padding-top: 89px;
@@ -698,6 +862,28 @@ a.listing-card-button {
   height: 224px;
   text-align: center;
 }
+
+#subscribe-email {
+  width: 580px;
+  height: 60px;
+  padding: 0;
+  padding-left: 19px;
+
+  background-color: #F2F2F2;
+  border-radius: 10px 0 0 10px;
+  border: none;
+  outline: none;
+}
+
+.button-subscribe {
+  width: 200px;
+  padding: 0;
+  margin: 0;
+  border-radius: 0 10px 10px 0;
+  border: none;
+  outline: none;
+}
+
 
 
 /* End of Main */

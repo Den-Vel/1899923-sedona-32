@@ -4,18 +4,19 @@
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
   </head>
   <body>
     <header>
       <nav class="navigation">
         <ul class="navigation-list">
-          <li class=navigation-item>
+          <li class="navigation-item">
             <a class="navigation-link" href="index.html">Главная</a>
           </li>
-          <li class=navigation-item>
+          <li class="navigation-item">
             <a class="navigation-link" href="#">О Седоне</a>
           </li>
-          <li class=navigation-item>
+          <li class="navigation-item nav-link-current">
             <a class="navigation-link">Гостиницы</a>
           </li>
         </ul>
@@ -25,17 +26,20 @@
           </a>
         </div>
         <ul class="navigation-list navigation-user">
-          <li class=navigation-item>
+          <li class="navigation-item">
             <a class="navigation-search" href="#">
               <span class="visually-hidden">Поиск.</span>
             </a>
           </li>
-          <li class=navigation-item>
+          <li class="navigation-item">
             <a class="navigation-favorites" href="#">
               <span class="visually-hidden">Избранное.</span>
             </a>
           </li>
-          <li class=navigation-item>
+          <li class="navigation-item favorites-icon">
+            <span class="nav-favorites-number white">12</span>
+          </li>
+          <li class="navigation-item">
             <a class="navigation-hotels white bg-brown" href="hotels.html">
               <span class="visually-hidden">Перейти на страницу каталога гостиниц в Седоне.</span>Хочу сюда!
             </a>
@@ -89,10 +93,14 @@
 
             <fieldset class="catalog-filters-group">
               <legend class="catalog-filters-title">Стоимость, &#8381;</legend>
-              <input type="number" name="price-min" id="price-min" value="0">
-              <label for="price-min">от</label>
-              <input type="number" name="price-max" id="price-max" value="9000">
-              <label for="price-max">до</label>
+              <div class="catalog-numbers">
+                <input type="number" name="price-min" id="price-min" value="0" min="0">
+                <label for="price-min">от</label>
+              </div>
+              <div class="catalog-numbers">
+                <input type="number" name="price-max" id="price-max" value="9000" max="9000">
+                <label for="price-max">до</label>
+              </div>
               <button class="range-toggle toggle-min" type="button">
                 <span class="visually-hidden">Изменить минимальную цену.</span>
               </button>
@@ -100,9 +108,10 @@
                 <span class="visually-hidden">Изменить максимальную цену.</span>
               </button>
             </fieldset>
-
-            <button class="apply-button white bg-blue" type="submit">Применить</button>
-            <button class="filters-reset-button white" type="reset">Сбросить</button>
+            <div class="catalog-buttons">
+              <button class="apply-button white bg-blue" type="submit">Применить</button>
+              <button class="filters-reset-button white" type="reset">Сбросить</button>
+            </div>
           </form>
         </section>
       </div>
@@ -140,7 +149,8 @@
             <a class="listing-card-button white bg-brown grid-details" href="#">Подробнее</a>
             <button class="listing-card-button white bg-blue grid-favorites" type="submit">В избранное</button>
             <div class="listing-card-stars">
-              <img class="stars-image" src=""alt="Количество звезд">
+              <img class="stars-image" src="../images/4_stars.svg" width="91" height="17" alt="Количество звезд">
+              <span class="visually-hidden">4 звезды</span>
             </div>
             <span class="listing-card-rating">Рейтинг: 8,5</span>
           </li>
@@ -153,7 +163,8 @@
             <a class="listing-card-button white bg-brown grid-details" href="#">Подробнее</a>
             <button class="listing-card-button white bg-blue grid-favorites" type="submit">В избранное</button>
             <div class="listing-card-stars">
-              <img class="stars-image" src="" alt="Количество звезд">
+              <img class="stars-image" src="../images/3_stars.svg" width="68" height="17" alt="Количество звезд">
+              <span class="visually-hidden">3 звезды</span>
             </div>
             <span class="listing-card-rating">Рейтинг: 8,9</span>
           </li>
@@ -166,7 +177,8 @@
             <a class="listing-card-button white bg-brown grid-details" href="#">Подробнее</a>
             <button class="listing-card-button white bg-green grid-favorites" type="submit">В избранном</button>
             <div class="listing-card-stars">
-              <img class="stars-image" src="" alt="Количество звезд">
+              <img class="stars-image" src="../images/2_stars.svg" width="43" height="17" alt="Количество звезд">
+              <span class="visually-hidden">2 звезды</span>
             </div>
             <span class="listing-card-rating">Рейтинг: 9,2</span>
           </li>
@@ -179,7 +191,8 @@
             <a class="listing-card-button white bg-brown grid-details" href="#">Подробнее</a>
             <button class="listing-card-button white bg-blue grid-favorites" type="submit">В избранное</button>
             <div class="listing-card-stars">
-              <img class="stars-image" src="" alt="Количество звезд">
+              <img class="stars-image" src="../images/2_stars.svg" width="43" height="17" alt="Количество звезд">
+              <span class="visually-hidden">2 звезды</span>
             </div>
             <span class="listing-card-rating">Рейтинг: 9,2</span>
           </li>
@@ -220,8 +233,7 @@
               <option value="8">8</option>
               <option value="16">16</option>
               <option value="32">32</option>
-              <option value="64">64</option>
-              <option value="128">128</option>
+              <option value="64">Все</option>
             </select>
           </form>
         </div>
@@ -231,9 +243,9 @@
         <section class="catalog-subscribe">
           <h2 class="block-title">Подпишитесь на рассылку</h2>
           <p class="block-description">
-            Только полезная информация и никакого спама, честное бойскаутское!
+            Только полезная информация и никакого спама,<br> честное бойскаутское!
           </p>
-          <form class="subsribe-form" action="https://echo.htmlacademy.ru" method="post">
+          <form class="subscribe-form" action="https://echo.htmlacademy.ru" method="post">
             <label class="visually-hidden" for="subscribe-email">Ваш e-mail.</label>
             <input class="field" type="email" name="e-mail" placeholder="Ваш e-mail" id="subscribe-email" required>
             <button class="button-subscribe white bg-blue" type="submit">
