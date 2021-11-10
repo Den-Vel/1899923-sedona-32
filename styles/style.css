@@ -714,11 +714,14 @@ input {
 
 .catalog-bg-image {
   min-height: 408px;
-  background-image: url("../images/catalog-background.jpg");
-  background-color: #333333;
-  box-sizing: border-box;
   padding: 35px 71px 45px;
   margin-bottom: 44px;
+
+  background-image: url("../images/catalog-background.jpg");
+  background-color: #333333;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
 }
 
 .inner-title {
@@ -1129,7 +1132,7 @@ input::-webkit-inner-spin-button {
 }
 
 select {
-  background-image: url(../images/selector-arrow.svg);
+  background-image: url("../images/selector-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 21px center;
 
