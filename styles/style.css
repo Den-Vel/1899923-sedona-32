@@ -113,6 +113,7 @@ input {
   left: 531px;
   width: 138px;
   height: 70px;
+  z-index: 3;
 }
 
 .header-logo a:focus-visible {
@@ -299,6 +300,7 @@ input {
 }
 
 /* Фоны для белого текста + состояния при взаимодействии */
+
 .bg-blue {
   background-color: #83B3D3;
 }
@@ -417,6 +419,7 @@ input {
 }
 
 .about-sedona-greeting {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -429,10 +432,15 @@ input {
   background-repeat: no-repeat;
 }
 
-.divider {
+.about-sedona-greeting::after {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
   width: 1200px;
   height: 57px;
   background-image: url("../images/divider.svg");
+  content: "";
 }
 
 /* Main/Главная/Блок "Преимущества" */
@@ -443,6 +451,7 @@ input {
 }
 
 .advantages-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -468,6 +477,10 @@ input {
   
 }
 
+.advantages-title.advantages-icons {
+  margin-top: 183px;
+}
+
 .housing-icon {
   width: 75px;
   height: 72px;
@@ -477,31 +490,15 @@ input {
   background-repeat: no-repeat;
 }
 
-.burger-icon {
-  width: 74px;
-  height: 70px;
-  margin-top: 90px;
-  text-align: center;
-  background-image: url("../images/burger-icon.svg");
-  background-repeat: no-repeat;
-}
-
-.souvenir-icon {
-  width: 64px;
-  height: 76px;
-  margin-top: 84px;
-  text-align: center;
-  background-image: url("../images/souvenir-icon.svg");
-  background-repeat: no-repeat;
-}
-
+/* 
 .housing-icon,
 .burger-icon,
 .souvenir-icon {
   margin-bottom: 23px;
-}
+} */
 
 .advantages-icons {
+  position: relative;
   margin-bottom: 20px;
   
   font-family: inherit;
@@ -509,6 +506,41 @@ input {
   line-height: 28px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.advantages-item:nth-child(3)::before {
+  position: absolute;
+  top: 88px;
+  left: 162px;
+  width: 75px;
+  height: 72px;
+  background-image: url("../images/housing-icon.svg");
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.advantages-item:nth-child(4)::before {
+  position: absolute;
+  top: 89px;
+  left: 162px;
+  width: 74px;
+  height: 70px;
+  text-align: center;
+  background-image: url("../images/burger-icon.svg");
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.advantages-item:nth-child(5)::before {
+  position: absolute;
+  top: 86px;
+  left: 167px;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  background-image: url("../images/souvenir-icon.svg");
+  background-repeat: no-repeat;
+  content: "";
 }
 
 .advantages-description {
@@ -684,7 +716,6 @@ input {
   min-height: 408px;
   background-image: url("../images/catalog-background.jpg");
   background-color: #333333;
-  background-repeat: no-repeat;
   box-sizing: border-box;
   padding: 35px 71px 45px;
   margin-bottom: 44px;
@@ -852,6 +883,11 @@ input {
   content: url(../images/checked.svg);
 }
 
+.control-input[type="checkbox"]:disabled + .control-mark,
+.control-input[type="checkbox"]:disabled ~ .control-label {
+  opacity: 0.3;
+}
+
 /* Радио кнопки */
 
 .control-input[type="radio"] + .control-mark {
@@ -874,6 +910,11 @@ input {
   background-color: #3F5E72;
   border-radius: 50%;
   content: "";
+}
+
+.control-input[type="radio"]:disabled + .control-mark,
+.control-input[type="radio"]:disabled ~ .control-label {
+  opacity: 0.3;  
 }
 
 /* Фильтр цен */
@@ -941,6 +982,10 @@ input::-webkit-inner-spin-button {
 .catalog-numbers:nth-child(3):hover {
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 0 4px 4px 0;
+}
+
+.catalog-numbers input:disabled {
+  opacity: 0.3;
 }
 
 .catalog-numbers label {
@@ -1072,7 +1117,7 @@ input::-webkit-inner-spin-button {
 .sorting-select-control {
   width: 287px;
   min-height: 47px;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
   padding-left: 17px;
   margin-right: 81px;
 
@@ -1195,6 +1240,10 @@ select:active {
   padding-top: 29px;
   padding-bottom: 30px;
   border-bottom: 1px solid #E6E6E6;
+}
+
+.listing-card:first-child {
+  border-top: 1px solid #E6E6E6;
 }
 
 .listing-card:nth-last-child(2) {
@@ -1399,6 +1448,7 @@ a.listing-card-button {
   background-color: #E5E5E5;
   border-radius: 4px;
   margin-right: 8px;
+  margin-bottom: 5px;
 }
 
 .listing-items-on-page {
