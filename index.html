@@ -21,7 +21,7 @@
           </li>
         </ul>
         <div class="header-logo">
-          <a href="https://htmlacademy.ru">
+          <a>
             <img class="logo" src="images/logo-sedona.svg" width="138" height="70" alt="Логотип сайта бронирования гостиниц в Седоне.">
           </a>
         </div>
@@ -34,7 +34,7 @@
             </a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-favorites" href="#popup-favorites">
+            <a class="navigation-favorites" href="#">
               <svg class="navigation-icon" aria-hidden="true" focusable="false" width="18" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.9 17a.9.9 0 0 1-.8-.4c-5.4-6.1-6.7-7.5-7-7.9A5.4 5.4 0 0 1 5.5 0C6.8 0 8 .5 9 1.3a5.46 5.46 0 0 1 9 4.1c0 1.3-.5 2.5-1.3 3.4l-7 7.9c-.2.2-.4.3-.8.3Zm-6-9.5c.3.4 3.5 4 6.1 6.9l6.2-7c.5-.5.7-1.2.7-2 0-1.8-1.5-3.3-3.3-3.3-1 0-2 .5-2.7 1.3-.3.3-.6.4-.9.4-.3 0-.6-.2-.8-.4-.7-.8-1.7-1.3-2.7-1.3-1.8 0-3.3 1.5-3.3 3.3-.1.9.3 1.6.7 2.1-.1 0-.1 0 0 0Z"/>
               </svg>
               <span class="visually-hidden">Избранное.</span>
@@ -56,7 +56,6 @@
         <h2 class="visually-hidden">О Седоне.</h2>
         <div class="about-sedona-greeting">
           <img src="images/welcome.svg" width="458" height="352" alt="Добро пожаловать в Седону!">
-          <!-- <div class="divider"></div> -->
         </div>
         <div class="sedona-description">
           <p class="block-title">
@@ -226,14 +225,14 @@
 
     <!--Попап "Избранные"-->
 
-    <section id="popup-favorites" class="popup-favorites-wrap">
+    <section class="popup-favorites-wrap">
       <div class="popup-favorites">
         <div class="trian"></div>
           <ul>
             <li  class="popup-favorites-item">
               <a class="popup-favorites-hotel" href="#">
                 <h3 class="popup-favorites-title">Desert Quail Inn</h3>
-                <img class="popup-favorites-image" src="../images/hotels/desert-quail-inn.jpg" width="48" height="48" alt="Мотель Desert Quail Inn.">
+                <img class="popup-favorites-image" src="images/hotels/desert-quail-inn.jpg" width="48" height="48" alt="Мотель Desert Quail Inn.">
                 <span class="popup-favorites-acctype">Мотель</span>
               </a>
               <button class="popup-favorites-trash" type="button">
@@ -249,7 +248,7 @@
             <li  class="popup-favorites-item">
               <a class="popup-favorites-hotel" href="#">
                 <h3 class="popup-favorites-title">Villas at Poco Diablo</h3>
-                <img class="popup-favorites-image" src="../images/hotels/villas-poco-diablo.jpg" width="48" height="48" alt="Мотель Villas at Poco Diablo.">
+                <img class="popup-favorites-image" src="images/hotels/villas-poco-diablo.jpg" width="48" height="48" alt="Мотель Villas at Poco Diablo.">
                 <span class="popup-favorites-acctype">Апартаменты</span>
               </a>
               <button class="popup-favorites-trash" type="button">
@@ -268,7 +267,7 @@
 
     <!--Модальное окно-->
 
-    <div id="modal" class="modal-container">
+    <div class="modal-container">
       <section class="modal">
         <div class="modal-title-wrap">
           <h3 class="modal-title">Поиск гостиницы в Седоне</h3>
@@ -278,29 +277,29 @@
         </div>
 
         <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
-          <label class="label-checkin" for="modal-checkin">Дата заезда</label>
+          <label class="label-checkin" for="modal-checkin">Дата заезда:</label>
           <div class="modal-checkin-wrap">
             <input class="modal-checkin" type="text" name="check-in-date" id="modal-checkin" placeholder="Укажите дату" required>
-            <span class="modal-date-icon"></span>
+            <button class="modal-date-icon"></button>
           </div>
           <span class="checkin-status-comment status-comment-error">Сообщение об ошибке</span>
 
-          <label class="label-checkout" for="modal-checkout">Дата выезда</label>
+          <label class="label-checkout" for="modal-checkout">Дата выезда:</label>
           <div class="modal-checkout-wrap">
             <input class="modal-checkout" type="text" name="check-out-date" id="modal-checkout" placeholder="Укажите дату" required>
-            <span class="modal-date-icon"></span>
+            <button class="modal-date-icon" type="button"></button>
           </div>
           <span class="checkout-status-comment">Сообщение об успехе.</span>
           
+          <label class="label-adults" for="adults">Взрослые:</label>
           <div class="adults-quantity-wrap">
-            <label class="label-adults" for="adults">Взрослые:</label>
             <button class="minus" type="button">
               <svg width="13" height="1" viewBox="0 0 13 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0L0 1L13 1V0L0 0Z"/>
               </svg>
               <span class="visually-hidden">Уменьшить количество взрослых.</span>
             </button>
-            <input class="adults-quantity" type="text" name="adults-quantity" id="adults" min="1" value="2" readonly>
+            <input class="adults-quantity" type="text" name="adults-quantity" id="adults" min="1" value="2" readonly  tabindex="-1">
             <button class="plus" type="button">
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 6H7V0H6V6H0V7H6V13H7V7H13V6Z"/>
@@ -311,7 +310,7 @@
 
           <div class="modal-kids-wrap">
             <label class="label-kids" for="kids">Дети:</label>
-            <button class="modal-info-button" type="button">i
+            <button class="modal-info-button" type="button" tabindex="0">i
               <span class="modal-info">Укажите количество детей,<br> которые будут с вами, возраст<br> которых от 6 до 18 лет. Дети<br> до 6 лет размещаются<br> бесплатно.
               </span>
             </button>
@@ -321,7 +320,7 @@
               </svg>
               <span class="visually-hidden">Уменьшить количество детей.</span>
             </button>
-            <input class="kids-quantity" type="text" name="kids-quantity" id="kids" min="0" value="0" readonly>
+            <input class="kids-quantity" type="text" name="kids-quantity" id="kids" min="0" value="0" readonly tabindex="-1">
             <button class="plus" type="button">
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 6H7V0H6V6H0V7H6V13H7V7H13V6Z"/>

@@ -434,7 +434,6 @@ input {
 
 .about-sedona-greeting::after {
   position: absolute;
-  z-index: 10;
   bottom: 0;
   left: 0;
   width: 1200px;
@@ -489,13 +488,6 @@ input {
   background-image: url("../images/housing-icon.svg");
   background-repeat: no-repeat;
 }
-
-/* 
-.housing-icon,
-.burger-icon,
-.souvenir-icon {
-  margin-bottom: 23px;
-} */
 
 .advantages-icons {
   position: relative;
@@ -752,7 +744,7 @@ input {
   padding-bottom: 5px;
   margin-right: 25px;
 
-  background-image: url(../images/home.svg);
+  background-image: url("../images/home.svg");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -789,7 +781,7 @@ input {
   width: 5px;
   height: 8px;
 
-  background-image: url(../images/nav-link.svg);
+  background-image: url("../images/nav-link.svg");
   opacity: 0.3;
   content: "";
 }
@@ -880,7 +872,7 @@ input {
 .control-input[type="checkbox"]:checked + .control-mark::before {
   position: absolute;
   top: -3px;
-  left: 5px;
+  left: 4px;
   width: 12px;
   height: 10px;
   content: url(../images/checked.svg);
@@ -1003,7 +995,6 @@ input::-webkit-inner-spin-button {
   font-size: 18px;
   line-height: 23px;
 
-  padding: 13px auto;
   color: rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
 }
@@ -1129,6 +1120,8 @@ input::-webkit-inner-spin-button {
   line-height: 24px;
   font-weight: 400;
   color: #333333;
+
+  background-color: #ffffff
 }
 
 select {
@@ -1303,7 +1296,6 @@ select:active {
 
 .listing-card-stars {
   grid-area: listing-card-stars;
-
 }
 
 .listing-hotel {
@@ -1477,6 +1469,8 @@ a.listing-card-button {
   font-size: 18px;
   line-height: 23px;
   font-weight: 400;
+
+  background-color: #ffffff;
 }
 
 .number-of-items option {
@@ -1629,18 +1623,13 @@ a.listing-card-button {
 /* Попап "Избранные" */
 
 .popup-favorites-wrap {
-  display: flex;
+  display: none; /* display: flex; для включения попапа */
   flex-direction: column;
   position: absolute;
   top: 60px;
   right: 71px;
   width: 400px;
   background-color: transparent;
-  visibility: hidden; /* Временное правило для демонстрации попапа */
-}
-
-.popup-favorites-wrap:target { /* Временное правило для демонстрации попапа */
-  visibility: visible;
 }
 
 .popup-favorites {
@@ -1787,7 +1776,9 @@ a.listing-card-button {
   position: fixed;
   top: 0;
   left: 0;
-  display: none;
+  z-index: 10;
+
+  display: none; /* display: flex; для включения окна */
   width: 100%;
   height: 100%;
   background: rgba(242, 242, 242, 0.8);
@@ -1797,14 +1788,12 @@ a.listing-card-button {
   display: none;
 }
 
-/* Заголовок и кнопка "Закрыть" */
 .modal {
   position: relative;
-  z-index: 10;
 
   width: 575px;
-  height: 421px;
-  padding: 70px;
+  min-height: 421px;
+  padding: 54px 70px 70px;
   margin: auto;
 
   background-color: #ffffff;
@@ -1812,18 +1801,21 @@ a.listing-card-button {
   border-radius: 30px;
 }
 
+/* Заголовок и кнопка "Закрыть" */
+
 .modal-title-wrap {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   height: max-content;
-  margin-bottom: 32px;
+  margin-bottom: 54px;
 }
 
 .modal-title {
   grid-column: 1 / 4;
   grid-row: 1 / 2;
 
+  padding-top: 7px;
   font-family: inherit;
   font-size: 30px;
   line-height: 40px;
@@ -1894,6 +1886,7 @@ a.listing-card-button {
   grid-column: 2 / 4;
   grid-row: 2 / 3;
   position: relative;
+  height: 50px;
 }
 
 .checkin-status-comment {
@@ -1910,6 +1903,7 @@ a.listing-card-button {
   grid-column: 2 / 4;
   grid-row: 4 / 5;
   position: relative;
+  height: 50px;
 }
 
 .checkout-status-comment {
@@ -1990,12 +1984,14 @@ a.listing-card-button {
 .modal-date-icon::after {
   position: absolute;
   top: 15px;
-  right: 19px;
+  right: 12px;
   width: min-content;
   height: min-content;
+  padding: 7px;
 
   background-color: transparent;
-  content: url(../images/date.svg);
+  content: url("../images/date.svg");
+  cursor: pointer;
 }
 
 .checkin-status-comment,
@@ -2085,6 +2081,11 @@ a.listing-card-button {
   border-radius: 50%;
 }
 
+.modal-info-button:focus {
+  outline: 3px solid #615048;
+  border-radius: 50%;
+}
+
 .modal-info {
   position: absolute;
   top: 40px;
@@ -2093,7 +2094,7 @@ a.listing-card-button {
 
   display: block;
   width: 216px;
-  height: 110px;
+  min-height: 110px;
   text-align: start;
   padding: 15px 18px 18px 22px;
 
@@ -2115,7 +2116,7 @@ a.listing-card-button {
   left: 3px;
   width: 19px;
   height: 9px;
-  content: url(../images/modal-info-trian.svg);
+  content: url("../images/modal-info-trian.svg");
   visibility: hidden;
 }
 
@@ -2123,10 +2124,17 @@ a.listing-card-button {
   visibility: visible;
 }
 
+.modal-info-button:focus .modal-info {
+  visibility: visible;
+}
+
 .modal-info-button:hover::after {
   visibility: visible;
 }
 
+.modal-info-button:focus::after {
+  visibility: visible;
+}
 /* Кнопка "Найти" */
 
 .modal-button {

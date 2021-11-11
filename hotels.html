@@ -21,7 +21,7 @@
           </li>
         </ul>
         <div class="header-logo">
-          <a href="https://htmlacademy.ru">
+          <a href="index.html">
             <img class="logo" src="images/logo-sedona.svg" width="138" height="70" alt="Логотип сайта бронирования гостиниц в Седоне.">
           </a>
         </div>
@@ -179,7 +179,7 @@
             <a class="listing-card-button white bg-brown grid-details" href="#">Подробнее</a>
             <button class="listing-card-button white bg-blue grid-favorites" type="submit">В избранное</button>
             <div class="listing-card-stars">
-              <img class="stars-image" src="../images/4_stars.svg" width="91" height="17" alt="Количество звезд">
+              <img class="stars-image" src="images/4_stars.svg" width="91" height="17" alt="Количество звезд">
               <span class="visually-hidden">4 звезды.</span>
             </div>
             <span class="listing-card-rating">Рейтинг: 8,5</span>
@@ -197,7 +197,7 @@
             <a class="listing-card-button white bg-brown grid-details" href="#">Подробнее</a>
             <button class="listing-card-button white bg-blue grid-favorites" type="submit">В избранное</button>
             <div class="listing-card-stars">
-              <img class="stars-image" src="../images/3_stars.svg" width="68" height="17" alt="Количество звезд">
+              <img class="stars-image" src="images/3_stars.svg" width="68" height="17" alt="Количество звезд">
               <span class="visually-hidden">3 звезды.</span>
             </div>
             <span class="listing-card-rating">Рейтинг: 8,9</span>
@@ -215,7 +215,7 @@
             <a class="listing-card-button white bg-brown grid-details" href="#">Подробнее</a>
             <button class="listing-card-button white bg-green grid-favorites" type="submit">В избранном</button>
             <div class="listing-card-stars">
-              <img class="stars-image" src="../images/2_stars.svg" width="43" height="17" alt="Количество звезд">
+              <img class="stars-image" src="images/2_stars.svg" width="43" height="17" alt="Количество звезд">
               <span class="visually-hidden">2 звезды.</span>
             </div>
             <span class="listing-card-rating">Рейтинг: 9,2</span>
@@ -233,7 +233,7 @@
             <a class="listing-card-button white bg-brown grid-details" href="#">Подробнее</a>
             <button class="listing-card-button white bg-blue grid-favorites" type="submit">В избранное</button>
             <div class="listing-card-stars">
-              <img class="stars-image" src="../images/2_stars.svg" width="43" height="17" alt="Количество звезд">
+              <img class="stars-image" src="images/2_stars.svg" width="43" height="17" alt="Количество звезд">
               <span class="visually-hidden">2 звезды.</span>
             </div>
             <span class="listing-card-rating">Рейтинг: 9,2</span>
@@ -355,14 +355,14 @@
 
     <!--Попап "Избранные"-->
 
-    <section id="popup-favorites" class="popup-favorites-wrap">
+    <section class="popup-favorites-wrap">
       <div class="popup-favorites">
         <div class="trian"></div>
           <ul>
             <li  class="popup-favorites-item">
               <a class="popup-favorites-hotel" href="#">
                 <h3 class="popup-favorites-title">Desert Quail Inn</h3>
-                <img class="popup-favorites-image" src="../images/hotels/desert-quail-inn.jpg" width="48" height="48" alt="Мотель Desert Quail Inn.">
+                <img class="popup-favorites-image" src="images/hotels/desert-quail-inn.jpg" width="48" height="48" alt="Мотель Desert Quail Inn.">
                 <span class="popup-favorites-acctype">Мотель</span>
               </a>
               <button class="popup-favorites-trash" type="button">
@@ -378,7 +378,7 @@
             <li  class="popup-favorites-item">
               <a class="popup-favorites-hotel" href="#">
                 <h3 class="popup-favorites-title">Villas at Poco Diablo</h3>
-                <img class="popup-favorites-image" src="../images/hotels/villas-poco-diablo.jpg" width="48" height="48" alt="Мотель Villas at Poco Diablo.">
+                <img class="popup-favorites-image" src="images/hotels/villas-poco-diablo.jpg" width="48" height="48" alt="Мотель Villas at Poco Diablo.">
                 <span class="popup-favorites-acctype">Апартаменты</span>
               </a>
               <button class="popup-favorites-trash" type="button">
@@ -397,7 +397,7 @@
 
     <!--Модальное окно-->
 
-    <div id="modal" class="modal-container">
+    <div class="modal-container">
       <section class="modal">
         <div class="modal-title-wrap">
           <h3 class="modal-title">Поиск гостиницы в Седоне</h3>
@@ -407,29 +407,29 @@
         </div>
         
         <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
-          <label class="label-checkin" for="modal-checkin">Дата заезда</label>
+          <label class="label-checkin" for="modal-checkin">Дата заезда:</label>
           <div class="modal-checkin-wrap">
             <input class="modal-checkin" type="text" name="check-in-date" id="modal-checkin" placeholder="Укажите дату" required>
             <span class="modal-date-icon"></span>
           </div>
           <span class="checkin-status-comment status-comment-error">Сообщение об ошибке.</span>
 
-          <label class="label-checkout" for="modal-checkout">Дата выезда</label>
+          <label class="label-checkout" for="modal-checkout">Дата выезда:</label>
           <div class="modal-checkout-wrap">
             <input class="modal-checkout" type="text" name="check-out-date" id="modal-checkout" placeholder="Укажите дату" required>
             <span class="modal-date-icon"></span>
           </div>
           <span class="checkout-status-comment">Сообщение об успехе.</span>
           
+          <label class="label-adults" for="adults">Взрослые:</label>
           <div class="adults-quantity-wrap">
-            <label class="label-adults" for="adults">Взрослые:</label>
             <button class="minus" type="button">
               <svg width="13" height="1" viewBox="0 0 13 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0L0 1L13 1V0L0 0Z"/>
               </svg>
               <span class="visually-hidden">Уменьшить количество взрослых.</span>
             </button>
-            <input class="adults-quantity" type="text" name="adults-quantity" id="adults" min="1" value="2" readonly>
+            <input class="adults-quantity" type="text" name="adults-quantity" id="adults" min="1" value="2" readonly  tabindex="-1">
             <button class="plus" type="button">
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 6H7V0H6V6H0V7H6V13H7V7H13V6Z"/>
@@ -450,7 +450,7 @@
               </svg>
               <span class="visually-hidden">Уменьшить количество детей.</span>
             </button>
-            <input class="kids-quantity" type="text" name="kids-quantity" id="kids" min="0" value="0" readonly>
+            <input class="kids-quantity" type="text" name="kids-quantity" id="kids" min="0" value="0" readonly  tabindex="-1">
             <button class="plus" type="button">
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 6H7V0H6V6H0V7H6V13H7V7H13V6Z"/>
