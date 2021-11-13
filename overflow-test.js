@@ -19,4 +19,4 @@ function getTextNodesIn(elem, opt_fnFilter) {
   return textNodes;
 }
 
-getTextNodesIn(document.body).forEach((item) => { item.textContent = "Тст" })
+getTextNodesIn(document.body).forEach((item) => { item.textContent = "СЕДОНА — НЕБОЛЬШОЙ ГОРОДОК В АРИЗОНЕ, ЗАСЛУЖИВАЮЩИЙ БОЛЬШЕГО!" })
